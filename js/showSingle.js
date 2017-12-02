@@ -1,6 +1,6 @@
 function showSingle(id) {
-    var endpoint = 'http://api.tvmaze.com/shows/';
-    var cast_endpoint = 'http://api.tvmaze.com/shows/'+ id + '/cast';
+    var endpoint = 'https://api.tvmaze.com/shows/';
+    var cast_endpoint = 'https://api.tvmaze.com/shows/'+ id + '/cast';
     fetch(cast_endpoint)
         .then(blob => blob.json())
         .then(cast => {
