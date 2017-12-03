@@ -4,7 +4,7 @@ const resultContainer = document.querySelector('.result');
 
 searchButton.addEventListener('click', search);
 searchBox.addEventListener('keyup', handleEnter);
-
+resultContainer.addEventListener('click', handleListClick);
 
 manageState();
 function manageState(){
@@ -18,4 +18,15 @@ function manageState(){
         searchBox.value = 'sherlock';
         search();
     }
+}
+
+
+function handleListClick(e){
+    let li = e.target.closest('li');    
+    
+    if (!li) return;
+    if (!resultContainer.contains(li)) return;
+    
+    const id = li.dataset.id;
+    showSingle(id);
 }

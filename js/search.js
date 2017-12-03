@@ -8,7 +8,7 @@ function search(e) {
             var html = result.map(r => {
                 const image = r.show.image ? r.show.image.medium : '';
                 return `
-                <li onclick="showSingle(${r.show.id})">
+                <li data-id="${r.show.id}">
                     <img src="${image}">
                     <div class="description">
                         <span class="name">${r.show.name}</span><br>
